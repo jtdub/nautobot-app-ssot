@@ -6,6 +6,7 @@ from django.utils.text import slugify
 from django.core.serializers.json import DjangoJSONEncoder
 
 from nautobot.apps.models import PrimaryModel
+from nautobot.dcim.models import Location
 from nautobot.extras.models import ExternalIntegration
 
 
@@ -24,6 +25,18 @@ class AutomationGatewayModel(PrimaryModel):
         default=False,
         verbose_name="Enable or disable server SSoT sync",
         help_text="Enable or disable an automation gateway in SSoT app.",
+    )
+    location = models.ForeignKey(
+        Location,
+        on_delete=models.CASCADE,
+        unique=False,
+        verbose_name="Location Object",
+        help_text="Location for automation gateway server to sync.",
+    )
+    location_descendant = models.BooleanField(
+        default=True,
+        verbose_name="Include descendant locations",
+        help_text="Include devices from descendant locations.",
     )
     gateway = models.ForeignKey(
         ExternalIntegration,

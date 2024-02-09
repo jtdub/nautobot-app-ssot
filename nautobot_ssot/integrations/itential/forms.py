@@ -13,7 +13,7 @@ class AutomationGatewayModelForm(NautobotModelForm):
         """Meta class definition."""
 
         model = AutomationGatewayModel
-        fields = ["name", "enabled", "gateway"]
+        fields = ["name", "enabled", "gateway", "location", "location_descendant"]
 
 
 class AutomationGatewayModelFilterForm(BootstrapMixin, forms.Form):

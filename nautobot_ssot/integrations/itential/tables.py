@@ -15,13 +15,17 @@ class AutomationGatewayModelTable(BaseTable):
 
     pk = ToggleColumn()
     name = tables.LinkColumn()
+    enabled = tables.LinkColumn()
+    gateway = tables.LinkColumn()
+    location = tables.LinkColumn()
+    location_descendant = tables.LinkColumn()
     actions = ButtonsColumn(AutomationGatewayModel)
 
     class Meta:
         """Meta definition."""
 
         model = AutomationGatewayModel
-        fields = ["pk", "name"]
+        fields = ["pk", "name", "enabled", "gateway", "location", "location_descendant"]
 
 
 class AutomationGatewayAnsibleGroupModelTable(BaseTable):
@@ -29,10 +33,11 @@ class AutomationGatewayAnsibleGroupModelTable(BaseTable):
 
     pk = ToggleColumn()
     name = tables.LinkColumn()
+    variables = tables.LinkColumn()
     actions = ButtonsColumn(AutomationGatewayAnsibleGroupModel)
 
     class Meta:
         """Meta definition."""
 
         model = AutomationGatewayAnsibleGroupModel
-        fields = ["pk", "name"]
+        fields = ["pk", "name", "variables"]

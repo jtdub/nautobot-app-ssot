@@ -12,6 +12,7 @@ class AutomationGatewayModelFilterSet(BaseFilterSet):
             "name": "icontains",
             "enabled": "icontains",
             "gateway": "icontains",
+            "location": "icontains",
         },
     )
 
@@ -19,7 +20,7 @@ class AutomationGatewayModelFilterSet(BaseFilterSet):
         """Meta class definition."""
 
         model = AutomationGatewayModel
-        fields = ["name", "enabled", "gateway"]
+        fields = ["name", "enabled", "gateway", "location"]
 
 
 class AutomationGatewayAnsibleGroupModelFilterSet(BaseFilterSet):
