@@ -33,6 +33,7 @@ from nautobot.extras.models import JobResult
 from nautobot.extras.utils import extras_features
 
 from nautobot_ssot.integrations.servicenow.models import SSOTServiceNowConfig
+from nautobot_ssot.integrations.itential.models import AutomationGatewayModel, AutomationGatewayAnsibleGroupModel
 
 from .choices import SyncLogEntryActionChoices, SyncLogEntryStatusChoices
 
@@ -206,6 +207,8 @@ class SyncLogEntry(BaseModel):  # pylint: disable=nb-string-field-blank-null
 
 
 __all__ = (
+    "AutomationGatewayModel",
+    "AutomationGatewayAnsibleGroupModel",
     "SSOTServiceNowConfig",
     "Sync",
     "SyncLogEntry",

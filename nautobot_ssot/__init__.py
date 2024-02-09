@@ -18,6 +18,7 @@ _CONFLICTING_APP_NAMES = [
     "nautobot_ssot_device42",
     "nautobot_ssot_infoblox",
     "nautobot_ssot_ipfabric",
+    "nautobot_ssot_itential",
     "nautobot_ssot_servicenow",
 ]
 
@@ -93,6 +94,7 @@ class NautobotSSOTAppConfig(NautobotAppConfig):
         "enable_device42": False,
         "enable_infoblox": False,
         "enable_ipfabric": False,
+        "enable_itential": False,
         "enable_servicenow": False,
         "hide_example_jobs": True,
         "infoblox_default_status": "",
